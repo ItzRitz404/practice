@@ -30,7 +30,37 @@ class MyFlutterState extends State<MyFlutterApp>{
           width: MediaQuery.of(context).size.width,
           child: Stack(
             alignment: Alignment.topLeft,
-            children: [],
+            children: [
+              Align(
+                alignment: const Alignment(0.0, 0.0),
+                child: MaterialButton(
+                  onPressed: () {},
+                  color: const Color(0xff3a21d9),
+                  elevation: 0,
+                  shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.zero,
+                  ),
+                  textColor: const Color(0xfffffdfd),
+                  height: 40,
+                  minWidth: 140,
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  child: const Text(
+                    "Text Button",
+                    style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.normal,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+
+
+
+
+
+            
           ),
         ),
       ),
