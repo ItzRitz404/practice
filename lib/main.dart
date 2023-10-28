@@ -18,8 +18,33 @@ class MyFlutterApp extends StatefulWidget {
 }
 
 class MyFlutterState extends State<MyFlutterApp>{
- @override
- Widget build(BuildContext context) {
+
+  String dynamic_text = "";
+
+  @override
+  void initState() {
+    super.initState();
+   //PLACE CODE HERE TO INITALISE SERVER OBJECTS
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+     //PLACE CODE HERE YOU WANT TO EXECUTE IMMEDIATELY AFTER
+     //THE UI IS BUILT
+
+     setState(() {
+       dynamic_text = "have you touched me yet?";
+     });
+   
+   });
+ }
+
+  void buttonHandler () {
+    setState(() {
+      dynamic_text = "You have touched me :)";
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
      //Flutter UI Widgets go here
       backgroundColor: Color(0xff3e87c5),
@@ -34,7 +59,7 @@ class MyFlutterState extends State<MyFlutterApp>{
               Align(
                 alignment: const Alignment(0.0, 0.0),
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () { buttonHandler(); },
                   color: const Color(0xff3a21d9),
                   elevation: 0,
                   shape: const RoundedRectangleBorder(
@@ -54,13 +79,13 @@ class MyFlutterState extends State<MyFlutterApp>{
                   ),
                 ),
               ),
-              const Align(
+              Align(
                 alignment: Alignment(0.0, -0.7),
                 child: Text(
-                  "dummy text",
+                  dynamic_text,
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.clip,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
                     fontSize: 34,
@@ -88,7 +113,7 @@ class MyFlutterState extends State<MyFlutterApp>{
         ),
       ),
 
-   );
- }
+    );
+  }
 }
 
