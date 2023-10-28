@@ -54,6 +54,29 @@ class MyFlutterState extends State<MyFlutterApp>{
                   ),
                 ),
               ),
+              const Align(
+                alignment: Alignment(0.0, -0.7),
+                child: Text(
+                  "dummy text",
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.clip,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.normal,
+                    fontSize: 34,
+                    color: Color(0xffffffff),
+                  ),
+                ),
+              ),
+
+
+            
+            
+            
+            
+            
+            
+            
             ],
 
 
