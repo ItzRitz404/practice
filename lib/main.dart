@@ -31,7 +31,7 @@ class MyFlutterState extends State<MyFlutterApp>{
      //THE UI IS BUILT
 
      setState(() {
-       dynamic_text = "have you touched me yet?";
+       dynamic_text = "press button";
      });
    
    });
@@ -39,7 +39,7 @@ class MyFlutterState extends State<MyFlutterApp>{
 
   void buttonHandler () {
     setState(() {
-      dynamic_text = "You have touched me :)";
+      dynamic_text = "button presses";
     });
   }
 
@@ -70,7 +70,7 @@ class MyFlutterState extends State<MyFlutterApp>{
                   minWidth: 140,
                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   child: const Text(
-                    "Touch me :)",
+                    "press button",
                     style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
