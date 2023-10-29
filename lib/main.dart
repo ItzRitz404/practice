@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'node.dart';
 
 void main() async {
- runApp (
+
+  WidgetsFlutterBinding.ensureInitialized();
+
+  runApp (
    const MaterialApp(
      home: MyFlutterApp(),
-   ),
- );
+    ),
+  );
 }
 
 class MyFlutterApp extends StatefulWidget {
