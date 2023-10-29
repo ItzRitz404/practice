@@ -47,7 +47,7 @@ class MyFlutterState extends State<MyFlutterApp>{
   Widget build(BuildContext context) {
     return Scaffold(
      //Flutter UI Widgets go here
-      backgroundColor: Color(0xff3e87c5),
+      backgroundColor: const Color(0xff3e87c5),
       body: Align(
         alignment: Alignment.center,
         child: SizedBox(
@@ -80,12 +80,12 @@ class MyFlutterState extends State<MyFlutterApp>{
                 ),
               ),
               Align(
-                alignment: Alignment(0.0, -0.7),
+                alignment: const Alignment(0.0, -0.3),
                 child: Text(
                   dynamic_text,
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.clip,
-                  style: const TextStyle(
+                  style: const  TextStyle(
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
                     fontSize: 34,
