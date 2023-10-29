@@ -12,6 +12,14 @@ void main() async {
   String fileData = await rootBundle.loadString(csv);
   // print(fileData);
 
+  List<String> rows = fileData.split("\n");
+  for (int i = 0; i < rows.length; i++) {
+    // selects item from row and places
+    String row = rows[i];
+    print('$i - $row');
+
+  }
+
   runApp (
    const MaterialApp(
      home: MyFlutterApp(),
