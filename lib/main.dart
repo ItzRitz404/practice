@@ -16,7 +16,17 @@ void main() async {
   for (int i = 0; i < rows.length; i++) {
     // selects item from row and places
     String row = rows[i];
-    print('$i - $row');
+    List<String> itemInRow = row.split(","); 
+    int item1 = int.parse(itemInRow[0]);
+    int item2 = int.parse(itemInRow[1]);
+    String item3 = itemInRow[2];
+    Node node = Node(
+      item1,
+      item2,
+      item3
+    );
+    decisionMap.add(node);
+    // print('$i - $row');
 
   }
 
