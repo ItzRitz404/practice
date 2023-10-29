@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'node.dart';
+
+List<Node> decisionMap = [];
 
 void main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
+
+  String csv = "basic_map.csv";
+  String fileData = await rootBundle.loadString(csv);
+  // print(fileData);
 
   runApp (
    const MaterialApp(
