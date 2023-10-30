@@ -48,7 +48,9 @@ class MyFlutterApp extends StatefulWidget {
 
 class MyFlutterState extends State<MyFlutterApp>{
 
-  String dynamic_text = "";
+  late int iD;
+  late int nextID;
+  late String description;
 
   @override
   void initState() {
@@ -59,16 +61,20 @@ class MyFlutterState extends State<MyFlutterApp>{
      //PLACE CODE HERE YOU WANT TO EXECUTE IMMEDIATELY AFTER
      //THE UI IS BUILT
 
-     setState(() {
-       dynamic_text = "press button";
-     });
+      setState(() {
+        Node current = decisionMap.first;
+        iD = current.iD;
+        nextID = current.nextID;
+        description = current.description;
+      });
    
-   });
- }
+    });
+  }
 
   void buttonHandler () {
     setState(() {
-      dynamic_text = "button presses";
+      Node current = decisionMap.first;
+      iD = current.iD;
     });
   }
 
@@ -111,7 +117,7 @@ class MyFlutterState extends State<MyFlutterApp>{
               Align(
                 alignment: const Alignment(0.0, -0.3),
                 child: Text(
-                  dynamic_text,
+                  description,
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.clip,
                   style: const  TextStyle(
