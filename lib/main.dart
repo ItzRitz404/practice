@@ -50,7 +50,7 @@ class MyFlutterState extends State<MyFlutterApp>{
 
   late int iD;
   late int nextID;
-  late String description;
+  String description = "";
 
   @override
   void initState() {
@@ -73,8 +73,14 @@ class MyFlutterState extends State<MyFlutterApp>{
 
   void buttonHandler () {
     setState(() {
-      Node current = decisionMap.first;
-      iD = current.iD;
+      for(Node nextNode in decisionMap){
+        if (nextNode.iD == nextID) {
+          iD = nextNode.iD;
+          nextID = nextNode.nextID;
+          description = nextNode.description;
+          break;
+        }
+      }
     });
   }
 
